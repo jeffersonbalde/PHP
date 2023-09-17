@@ -23,7 +23,7 @@
                 $query = "INSERT INTO login_register VALUES('', '$name', '$username', '$email', '$password')";
                 mysqli_query($conn, $query);
                 echo '<script>alert("Registration Successful")</script>';
-                // header('Location: login.php');
+                header('Location: login.php');
             }else {
                 echo '<script> alert("Password does not match")</script>';
             }
