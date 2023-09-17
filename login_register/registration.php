@@ -1,6 +1,11 @@
 <?php
 
     require 'config.php';
+
+    if(!empty($_SESSION['id'])){
+        header('Location: index.php');
+    }
+
     if(isset($_POST['submit'])){
 
         $name = htmlspecialchars($_POST['name']);
@@ -18,6 +23,7 @@
                 $query = "INSERT INTO login_register VALUES('', '$name', '$username', '$email', '$password')";
                 mysqli_query($conn, $query);
                 echo '<script>alert("Registration Successful")</script>';
+                // header('Location: login.php');
             }else {
                 echo '<script> alert("Password does not match")</script>';
             }
