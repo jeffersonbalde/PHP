@@ -72,12 +72,26 @@
             opacity: 0.9;
         }
 
-        button {
+        button,
+        a {
             color: whitesmoke;
             background-color: red;
             width: 100%;
             padding: 7px;
             border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .signup {
+            font-size: 13px;
+            width: 170px;
+            align-self: flex-start;
+            text-align: center;
+            background-color: blue;
+        }
+        
+        a {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -86,7 +100,7 @@
         <div class="header">
             <img src="umbrella.png" alt="Umbrella" class="umbrella">
             <h1>"Our Business Is Life Itself"</h1>
-        </div>
+        </div>  
 
         <form action="" method="POST" >
             <label for="username">Username: </label><br>
@@ -96,10 +110,10 @@
             <input type="password" name="password" id="password" ><br>   
 
             <button type="submit" name="submit">Login</button>
+        
+            <br>
+            <a href="signup.php" class="signup">Signup</a>
         </form>
-
-        <br>
-        <a href="signup.php" class="signup">Signup</a>
     </main>
 </body>
 </html>

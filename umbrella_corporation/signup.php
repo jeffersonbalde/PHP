@@ -1,6 +1,7 @@
 <?php
 
-
+    require_once 'includes/config.session.inc.php';
+    require_once 'includes/signup.view.inc.php';
 
 ?>
 
@@ -37,8 +38,8 @@
             opacity: 0.9;
             border-radius: 8px;
             height: 500px;
-            padding: 50px 10px; 
-            margin-top: 50px;
+            padding: 90px 10px; 
+            margin-top: 30px;
         }
 
         .header{
@@ -72,36 +73,63 @@
             opacity: 0.9;
         }
 
-        button {
+        button,
+        a {
             color: whitesmoke;
             background-color: red;
             width: 100%;
             padding: 7px;
             border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login {
+            font-size: 13px;
+            width: 170px;
+            align-self: flex-start;
+            text-align: center;
+            background-color: blue;
+        }
+        
+        a {
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <main>
         <div class="header">
+            <img src="umbrella.png" alt="Umbrella" class="umbrella">
             <h1>Signup</h1>
         </div>
 
-        <form action="" method="POST" >
-            <label for="username">Username: </label><br>
+        <form action="includes/signup.inc.php" method="POST" >
+            <!-- <label for="username">Username: </label><br>
             <input type="text" name="username" id="username" placeholder="Username"><br>
 
             <label for="password">Password: </label><br>    
             <input type="password" name="password" id="password"><br>  
             
             <label for="email">Email: </label><br>    
-            <input type="email" name="email" id="email"><br>   
+            <input type="email" name="email" id="email"><br>    -->
+
+            <?php
+
+                signup_inputs();
+
+            ?>
 
             <button type="submit" name="submit">Signup</button>
+
+            <br>
+            <a href="login.php" class="login">Login</a>
         </form>
 
-        <br>
-        <a href="login.php" class="signup">Login</a>
+        <?php
+
+            check_signup_errors();
+
+        ?>
     </main>
 </body>
 </html>
