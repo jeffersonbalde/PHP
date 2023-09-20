@@ -102,7 +102,7 @@
             <h1>"Our Business Is Life Itself"</h1>
         </div>  
 
-        <form action="" method="POST" >
+        <form action="includes/login.inc.php" method="POST" >
             <label for="username">Username: </label><br>
             <input type="text" name="username" id="username" placeholder="Username"><br>
 
@@ -110,7 +110,7 @@
             <input type="password" name="password" id="password" ><br>   
 
             <button type="submit" name="submit">Login</button>
-        
+
             <br>
             <a href="signup.php" class="signup">Signup</a>
         </form>
