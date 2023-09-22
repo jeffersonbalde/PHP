@@ -1,6 +1,8 @@
 <?php
 
-
+    require_once 'includes/config.session.inc.php';
+    require_once 'includes/signup.view.inc.php';
+    require_once 'includes/login.view.inc.php';
 
 ?>
 
@@ -114,6 +116,10 @@
             <br>
             <a href="signup.php" class="signup">Signup</a>
         </form>
+
+        <?php
+            check_login_errors();
+        ?>
     </main>
 </body>
 </html>

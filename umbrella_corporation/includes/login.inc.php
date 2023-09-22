@@ -30,22 +30,25 @@
             require_once "config.session.inc.php";
 
             if($errors) {
-                $_SESSION["errors_signup"] = $errors;
-
-                $signupData =[
-                    "username" => $username,
-                    "email" => $email            
-                ];
-                $_SESSION["signup_data"] = $signupData;
+                $_SESSION["errors_login"] = $errors;
                 
-                header("Location: ../signup.php");
+                header("Location: ../login.php");
                 die();
             }
 
             $newSessionId = session_create_id();
             $sessionId = $newSessionId . "_" . $result["id"];
             session_id($sessionId);   
+            
+            $_SESSION["user_id"] = $result["id"];
+            $_SESSION["user_username"] = htmlspecialchars($result["username"]);
 
+            $_SESSION["last-regeneration"] = time();
+
+            header("Location: ../login.php?login=success");
+            $pdo = null;
+            $statement = null;
+ 
         } catch(PDOException $e) {
             die("Query failed: " . $e->getMessage());
         }
